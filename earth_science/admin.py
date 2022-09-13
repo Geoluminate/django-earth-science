@@ -1,9 +1,10 @@
 from django.contrib import admin
-from .models import EarthMaterial
+from .models import EarthMaterial, GeologicTime
 from treebeard.admin import TreeAdmin
 from treebeard.forms import movenodeform_factory
 from django.core.paginator import Paginator
 from .filters import TreeNodeDepthFilter
+from django.utils.html import mark_safe
 
 # Register your models here.
 class EarthMaterialTreeAdmin(TreeAdmin):

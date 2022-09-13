@@ -3,7 +3,7 @@ from earth_science.models import EarthMaterial
 from django.conf import settings
 from earth_science.utils import filter_tree
 
-def material_type_limiter():
+def limit_choices_to():
     """Controls what objects are passed to the jstree widget.
     
     The app will look for node names specified in either EARTH_MATERIALS_INCLUDE or EARTH_MATERIALS_EXCLUDE in the settings.py file and exclude or filter result based on which ever has been declared. If both variables contain items, only EARTH_MATERIALS_INCLUDE is used and the queryset is filtered.    
@@ -21,7 +21,7 @@ class EarthMaterialMixin():
 
     def __init__(self, *args, **kwargs):
         kwargs['to'] = "earth_science.EarthMaterial"
-        kwargs['limit_choices_to'] = material_type_limiter
+        kwargs['limit_choices_to'] = limit_choices_to
         super().__init__(*args, **kwargs)
 
 class EarthMaterialFK(EarthMaterialMixin,TreeForeignKey):
@@ -36,7 +36,7 @@ class EarthMaterialM2M(EarthMaterialMixin,TreeManyToManyField):
 class GeologicTimeMixin():
 
     def __init__(self, *args, **kwargs):
-        kwargs['to'] = "geologic_time.GeologicTime"
+        kwargs['to'] = "earth_science.GeologicTime"
         # kwargs['limit_choices_to'] = limit_choices_to
         super().__init__(*args, **kwargs)
 

@@ -75,7 +75,7 @@ class GeologicTime(MP_Node):
     class Meta:
         verbose_name = _('Geologic Time')
         verbose_name_plural = _('Geologic Times')
-        db_table = 'geologic_time'
+        # db_table = 'geologic_time'
 
     def __str__(self):
         return f'{self.label} {self.rank}'

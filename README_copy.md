@@ -16,32 +16,32 @@ The included data was published by the International Commission on Stratigraphy 
 
 First install the application with pip using
 
-    pip install django_geologic_time
+    pip install django_earth_science
 
-then add `geologic_time` to your installed apps like so
+then add `earth_science` to your installed apps like so
 
     INSTALLED_APPS = [
         ...
-        geologic_time,
+        earth_science,
         ...
     ]
 
-Finally, add the geologic_time urls to your project urls
+Finally, add the earth_science urls to your project urls
 
     urlpatterns = [
         ...
-        path('geologic_time', include('geologic_time.urls')),
+        path('earth_science', include('earth_science.urls')),
         ...
     ]
 
-> **_NOTE:_**  Don't forget to run `python manage.py migrate geologic_time` to migrate the schema and load the included data fixtures!
+> **_NOTE:_**  Don't forget to run `python manage.py migrate earth_science` to migrate the schema and load the included data fixtures!
 
 
 ## Usage
 
 Django Earth Materials provides an `GeologicTimeFK`, `GeologicTimeM2M` and `GeologicTimeOneToOne` field to help you integrate the app into your project as follows:
 
-    from earth_materials.fields import GeologicTimeFK, GeologicTimeM2M, GeologicTimeOneToOne
+    from earth_science.fields import GeologicTimeFK, GeologicTimeM2M, GeologicTimeOneToOne
 
     class SomeModel(models.Model):
         lithology = GeologicTimeOneToOne()
