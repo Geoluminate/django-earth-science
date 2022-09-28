@@ -13,7 +13,7 @@ def filter_tree(queryset=None, exclude=False):
     query = Q(id__in = include_descendants(queryset))
 
     if exclude:
-        # if we are excluding, return the negate Q object
+        # if we are excluding, return the negated Q object
         return ~query
     else:
         # if we are filtering, we need to first add the ancestors otherwise the tree won't build correctly
