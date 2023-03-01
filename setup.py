@@ -7,13 +7,13 @@ from setuptools import find_packages, setup
 
 from geoscience import __version__
 
-REPO_URL = "https://github.com/SSJenny90/django-earth-science"
+REPO_URL = "https://github.com/Geoluminate/geoluminate-earth-science"
 
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name="django-earth-science",
+    name="geoluminate-earth-science",
     packages=find_packages(),
     include_package_data=True,
     version=__version__,
@@ -27,7 +27,7 @@ setup(
         "django-treebeard",
         "django-treewidget",
     ],
-    keywords="science django geology geoscience earth earthscience",
+    keywords="science django geoluminate geology geoscience earth earthscience",
     classifiers=[
         "Development Status :: 1 - Development",
         "Intended Audience :: Developers",
