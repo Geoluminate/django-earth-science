@@ -14,32 +14,32 @@ Inconsistencies in the way rock types are reported in geological datasets are a 
 
 First install the application with pip using
 
-    pip install django_earth_science
+    pip install django_geoscience
 
-then add `earth_science` to your installed apps like so
+then add `geoscience` to your installed apps like so
 
     INSTALLED_APPS = [
         ...
-        earth_science,
+        geoscience,
         ...
     ]
 
-Finally, add the earth_science urls to your project urls
+Finally, add the geoscience urls to your project urls
 
     urlpatterns = [
         ...
-        path('earth_science', include('earth_science.urls')),
+        path('geoscience', include('geoscience.urls')),
         ...
     ]
 
-> **_NOTE:_**  Don't forget to run `python manage.py migrate earth_science` to migrate the schema and load the included data fixtures!
+> **_NOTE:_**  Don't forget to run `python manage.py migrate geoscience` to migrate the schema and load the included data fixtures!
 
 
 ## Usage
 
 Django Earth Materials provides an `EarthMaterialFK`, `EarthMaterialM2M` and `EarthMaterialOneToOne` field to help you integrate the app into your project as follows:
 
-    from earth_science.fields import EarthMaterialFK, EarthMaterialM2M, EarthMaterialOneToOne
+    from geoscience.fields import EarthMaterialFK, EarthMaterialM2M, EarthMaterialOneToOne
 
     class SomeModel(models.Model):
         lithology = EarthMaterialOneToOne()
@@ -108,4 +108,4 @@ This software is provided open-source thanks to:
 
 [![GeoForschungsZentrum logo](https://geoluminate.github.io/images/gfz_logo.png)](https://www.gfz-potsdam.de)
 
-[![GeoLuminate logo](https://geoluminate.github.io/images/standard_w1000.png)](https://www.geoluminate.com.au)
+[![Geoluminate logo](https://geoluminate.github.io/images/standard_w1000.png)](https://www.geoluminate.com.au)
