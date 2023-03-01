@@ -2,8 +2,10 @@
 # -*- coding: utf-8 -*-
 
 import os
-from setuptools import setup, find_packages
-from earth_science import __version__
+
+from setuptools import find_packages, setup
+
+from geoscience import __version__
 
 REPO_URL = "https://github.com/SSJenny90/django-earth-science"
 
@@ -11,32 +13,32 @@ REPO_URL = "https://github.com/SSJenny90/django-earth-science"
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-earth-science',
+    name="django-earth-science",
     packages=find_packages(),
     include_package_data=True,
     version=__version__,
-    author='Sam Jennings',
-    author_email='samuel.jennings@geoluminate.com.au',
-    license='MIT',
-    description='Django fields and utilites for the Earth Sciences',
+    author="Sam Jennings",
+    author_email="samuel.jennings@geoluminate.com.au",
+    license="MIT",
+    description="Django fields and utilites for the Earth Sciences",
     url=REPO_URL,
     install_requires=[
-        "Django>=3",    
-        "django-treebeard==1.0.0", 
-        "django-treewidget", 
-        ],
-    keywords='science django geology geoscience earth earthscience',
+        "Django>=3",
+        "django-treebeard==1.0.0",
+        "django-treewidget",
+    ],
+    keywords="science django geology geoscience earth earthscience",
     classifiers=[
-        'Development Status :: 1 - Development',
-        'Intended Audience :: Developers',
-        'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: MIT License',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Framework :: Django',
-        'Natural Language :: English',
-        'Topic :: Internet :: WWW/HTTP',
-        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+        "Development Status :: 1 - Development",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Framework :: Django",
+        "Natural Language :: English",
+        "Topic :: Internet :: WWW/HTTP",
+        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
 )
