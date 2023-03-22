@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "geoluminate-earth-science"
+version = "0.1.0"
+description = "A collection of Earth Science related addons for Geoluminate"
+authors = ["Sam <samuel.scott.jennings@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/Geoluminate/geoluminate-earth-science"
+packages = [{include = "geoscience"}]
+keywords = ["science", "research", "django", "geoluminate", "geology", "geoscience", "earth science", "open data", "FAIR"]
+
+classifiers=[
+    "Development Status :: 1 - Development",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Framework :: Django",
+    "Natural Language :: English",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django-treebeard = "^4.6.1"
+django-treewidget = "^0.4.2"
+django = "^4.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
