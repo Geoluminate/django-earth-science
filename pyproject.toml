@@ -27,7 +27,6 @@ classifiers=[
 python = "^3.9"
 django-treebeard = "^4.6.1"
 django-treewidget = "^0.4.2"
-django = "^4.1.7"
 
 
 [build-system]
