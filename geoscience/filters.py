@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.utils.translation import gettext as _
 
-class TreeNodeDepthFilter(admin.SimpleListFilter):
 
-    title = _('Material')
-    parameter_name = 'material'
+class TreeNodeDepthFilter(admin.SimpleListFilter):
+    title = _("Material")
+    parameter_name = "material"
 
     def lookups(self, request, model_admin):
         qs = model_admin.get_queryset(request).filter(depth__lte=model_admin.node_filter_depth)
@@ -16,4 +16,3 @@ class TreeNodeDepthFilter(admin.SimpleListFilter):
             return filtered.get(id=self.value()).get_descendants()
         else:
             return qs
-    

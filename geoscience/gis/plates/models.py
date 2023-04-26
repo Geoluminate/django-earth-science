@@ -3,11 +3,9 @@ from django.utils.translation import gettext as _
 
 
 class Plate(models.Model):
-    fixtures = (
-        "https://github.com/Geoluminate/gis_fixtures_dump/raw/main/plates.json.xz"
-    )
+    fixtures = "https://github.com/Geoluminate/gis_fixtures_dump/raw/main/plates.json.xz"
 
-    id = models.PositiveSmallIntegerField(
+    id = models.PositiveSmallIntegerField(  # noqa: A003
         primary_key=True,
         help_text=_("plate ID"),
     )
@@ -34,7 +32,7 @@ class Plate(models.Model):
         help_text=_("Latitude in decimal degrees"),
     )
 
-    type = models.CharField(
+    type = models.CharField(  # noqa: A003
         max_length=64,
         help_text=_("Latitude in decimal degrees"),
     )
@@ -43,12 +41,8 @@ class Plate(models.Model):
         help_text=_("Latitude in decimal degrees"),
     )
 
-    sea_name = models.CharField(
-        max_length=100, help_text=_("Latitude in decimal degrees"), null=True
-    )
-    domain = models.CharField(
-        max_length=100, help_text=_("Latitude in decimal degrees"), null=True
-    )
+    sea_name = models.CharField(max_length=100, help_text=_("Latitude in decimal degrees"), null=True)
+    domain = models.CharField(max_length=100, help_text=_("Latitude in decimal degrees"), null=True)
 
     area = models.FloatField(help_text=_("Latitude in decimal degrees"))
     geom = models.MultiPolygonField(srid=4326)

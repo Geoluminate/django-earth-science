@@ -4,12 +4,8 @@ from treebeard.mp_tree import MP_Node
 
 
 class EarthMaterial(MP_Node):
-    label = models.CharField(
-        _("Label"), help_text=_("Short label of the earth material"), max_length=255
-    )
-    name = models.CharField(
-        _("Name"), help_text=_("Name of the earth material"), max_length=255
-    )
+    label = models.CharField(_("Label"), help_text=_("Short label of the earth material"), max_length=255)
+    name = models.CharField(_("Name"), help_text=_("Name of the earth material"), max_length=255)
     description = models.TextField(
         _("Description"),
         help_text=_("Description of the material"),
@@ -17,9 +13,7 @@ class EarthMaterial(MP_Node):
         blank=True,
         null=True,
     )
-    code = models.CharField(
-        _("Code"), help_text=_("Identifier code"), max_length=16, blank=True, null=True
-    )
+    code = models.CharField(_("Code"), help_text=_("Identifier code"), max_length=16, blank=True, null=True)
     url = models.URLField(
         _("About"),
         help_text=_("URL to the page describing the field on the BGS website"),
@@ -53,7 +47,6 @@ class EarthMaterial(MP_Node):
 
 
 class GeologicTime(MP_Node):
-
     rank = models.CharField(_("Rank"), max_length=16)
 
     label = models.CharField(_("Label"), help_text=_("Label"), max_length=255)

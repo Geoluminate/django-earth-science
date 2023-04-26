@@ -4,79 +4,84 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='EarthMaterial',
+            name="EarthMaterial",
             fields=[
-                ('id', models.BigAutoField(auto_created=True,
-                 primary_key=True, serialize=False, verbose_name='ID')),
-                ('path', models.CharField(max_length=255, unique=True)),
-                ('depth', models.PositiveIntegerField()),
-                ('numchild', models.PositiveIntegerField(default=0)),
-                ('label',
-                 models.CharField(help_text='Short label of the earth material',
-                                  max_length=255,
-                                  verbose_name='Label')),
-                ('name',
-                 models.CharField(help_text='Name of the earth material',
-                                  max_length=255,
-                                  verbose_name='Name')),
-                ('description',
-                 models.TextField(blank=True,
-                                  help_text='Description of the material',
-                                  max_length=255,
-                                  null=True,
-                                  verbose_name='Description')),
-                ('code',
-                 models.CharField(blank=True,
-                                  help_text='Identifier code',
-                                  max_length=16,
-                                  null=True,
-                                  verbose_name='Code')),
-                ('url', models.URLField(
-                    help_text='URL to the page describing the field on the BGS website', verbose_name='About')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("path", models.CharField(max_length=255, unique=True)),
+                ("depth", models.PositiveIntegerField()),
+                ("numchild", models.PositiveIntegerField(default=0)),
+                (
+                    "label",
+                    models.CharField(
+                        help_text="Short label of the earth material", max_length=255, verbose_name="Label"
+                    ),
+                ),
+                ("name", models.CharField(help_text="Name of the earth material", max_length=255, verbose_name="Name")),
+                (
+                    "description",
+                    models.TextField(
+                        blank=True,
+                        help_text="Description of the material",
+                        max_length=255,
+                        null=True,
+                        verbose_name="Description",
+                    ),
+                ),
+                (
+                    "code",
+                    models.CharField(
+                        blank=True, help_text="Identifier code", max_length=16, null=True, verbose_name="Code"
+                    ),
+                ),
+                (
+                    "url",
+                    models.URLField(
+                        help_text="URL to the page describing the field on the BGS website", verbose_name="About"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Earth Material',
-                'verbose_name_plural': 'Earth Materials',
+                "verbose_name": "Earth Material",
+                "verbose_name_plural": "Earth Materials",
             },
         ),
         migrations.CreateModel(
-            name='GeologicTime',
+            name="GeologicTime",
             fields=[
-                ('id', models.BigAutoField(auto_created=True,
-                 primary_key=True, serialize=False, verbose_name='ID')),
-                ('path', models.CharField(max_length=255, unique=True)),
-                ('depth', models.PositiveIntegerField()),
-                ('numchild', models.PositiveIntegerField(default=0)),
-                ('rank', models.CharField(max_length=16, verbose_name='Rank')),
-                ('label', models.CharField(help_text='Label',
-                 max_length=255, verbose_name='Label')),
-                ('notation',
-                 models.CharField(blank=True,
-                                  help_text='Identifier code',
-                                  max_length=16,
-                                  null=True,
-                                  verbose_name='Notation')),
-                ('status', models.CharField(blank=True,
-                 max_length=16, null=True, verbose_name='Status')),
-                ('about',
-                 models.URLField(blank=True,
-                                 help_text='URL to the page describing the field on the BGS website',
-                                 null=True,
-                                 verbose_name='About')),
-                ('older_bound', models.FloatField(verbose_name='Older bound')),
-                ('younger_bound', models.FloatField(verbose_name='Younger bound')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("path", models.CharField(max_length=255, unique=True)),
+                ("depth", models.PositiveIntegerField()),
+                ("numchild", models.PositiveIntegerField(default=0)),
+                ("rank", models.CharField(max_length=16, verbose_name="Rank")),
+                ("label", models.CharField(help_text="Label", max_length=255, verbose_name="Label")),
+                (
+                    "notation",
+                    models.CharField(
+                        blank=True, help_text="Identifier code", max_length=16, null=True, verbose_name="Notation"
+                    ),
+                ),
+                ("status", models.CharField(blank=True, max_length=16, null=True, verbose_name="Status")),
+                (
+                    "about",
+                    models.URLField(
+                        blank=True,
+                        help_text="URL to the page describing the field on the BGS website",
+                        null=True,
+                        verbose_name="About",
+                    ),
+                ),
+                ("older_bound", models.FloatField(verbose_name="Older bound")),
+                ("younger_bound", models.FloatField(verbose_name="Younger bound")),
             ],
             options={
-                'verbose_name': 'Geologic Time',
-                'verbose_name_plural': 'Geologic Times',
+                "verbose_name": "Geologic Time",
+                "verbose_name_plural": "Geologic Times",
             },
         ),
     ]

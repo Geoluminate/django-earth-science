@@ -3,14 +3,11 @@ from django.utils.translation import gettext as _
 
 
 class Province(models.Model):
+    fixtures = "https://github.com/Geoluminate/gis_fixtures_dump/raw/main/provinces.json.xz"
 
-    fixtures = (
-        "https://github.com/Geoluminate/gis_fixtures_dump/raw/main/provinces.json.xz"
-    )
-
-    id = models.PositiveSmallIntegerField(primary_key=True)
+    id = models.PositiveSmallIntegerField(primary_key=True)  # noqa: A003
     name = models.CharField(max_length=80)
-    type = models.CharField(max_length=80)
+    type = models.CharField(max_length=80)  # noqa: A003
     reference = models.CharField(max_length=80, null=True)
     group = models.CharField(max_length=80, null=True)
     last_orogen = models.CharField(max_length=80, null=True)

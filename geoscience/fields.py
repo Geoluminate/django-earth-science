@@ -16,9 +16,7 @@ def limit_choices_to():
     values = include if include else exclude
 
     if values:
-        return filter_tree(
-            EarthMaterial.objects.filter(name__in=values), exclude=not include
-        )
+        return filter_tree(EarthMaterial.objects.filter(name__in=values), exclude=not include)
     return {}
 
 

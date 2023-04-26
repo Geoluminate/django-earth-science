@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('geoscience', '0001_initial'),
+        ("geoscience", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='earthmaterial',
-            options={'verbose_name': 'BGS Earth Material', 'verbose_name_plural': 'BGS Earth Materials'},
+            name="earthmaterial",
+            options={"verbose_name": "BGS Earth Material", "verbose_name_plural": "BGS Earth Materials"},
         ),
     ]
