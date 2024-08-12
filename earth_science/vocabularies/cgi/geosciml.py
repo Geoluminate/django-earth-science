@@ -1,178 +1,178 @@
-"""Collection of vocabularies from the CGI GeoSciML vocabulary. <https://cgi.vocabs.ga.gov.au/vocab/>"""
+"""Collection of vocabularies from the CGI GeoSciML RemoteVocabulary. <https://cgi.vocabs.ga.gov.au/vocab/>"""
 
-from research_vocabs import Vocabulary
+from research_vocabs.vocabularies import RemoteVocabulary
 
 
-class AlterationType(Vocabulary):
+class AlterationType(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/alteration-type"
 
 
-class BoreholeDrillingMethod(Vocabulary):
+class BoreholeDrillingMethod(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/borehole-drilling-method"
 
 
-class CompositionCategory(Vocabulary):
+class CompositionCategory(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/composition-category"
 
 
-class CompoundMaterialConstituentPart(Vocabulary):
+class CompoundMaterialConstituentPart(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/compound-material-constituent-part"
 
 
-class ConsolidationDegree(Vocabulary):
+class ConsolidationDegree(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/consolidation-degree"
 
 
-class ContactType(Vocabulary):
+class ContactType(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/contact-type"
 
 
-class ConventionCodeForStrikeAndDipMeasurements(Vocabulary):
+class ConventionCodeForStrikeAndDipMeasurements(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/convention-code-for-strike-and-dip-measurements"
 
 
-class DeformationStyle(Vocabulary):
+class DeformationStyle(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/deformation-style"
 
 
-class DescriptionPurpose(Vocabulary):
+class DescriptionPurpose(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/description-purpose"
 
 
-class EventEnvironment(Vocabulary):
+class EventEnvironment(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/event-environment"
 
 
-class EventProcess(Vocabulary):
+class EventProcess(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/event-process"
 
 
-class FaultMovementSense(Vocabulary):
+class FaultMovementSense(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/fault-movement-sense"
 
 
-class FaultMovementType(Vocabulary):
+class FaultMovementType(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/fault-movement-type"
 
 
-class FaultType(Vocabulary):
+class FaultType(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/fault-type"
 
 
-class FoliationType(Vocabulary):
+class FoliationType(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/foliation-type"
 
 
-class GeneticCategory(Vocabulary):
+class GeneticCategory(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/genetic-category"
 
 
-class GeologicUnitMorphology(Vocabulary):
+class GeologicUnitMorphology(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/geologic-unit-morphology"
 
 
-class GeologicUnitPartRole(Vocabulary):
+class GeologicUnitPartRole(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/geologic-unit-part-role"
 
 
-class GeologicUnitType(Vocabulary):
+class GeologicUnitType(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/geologic-unit-type"
 
 
-class LineationType(Vocabulary):
+class LineationType(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/lineation-type"
 
 
-class MappingFrame(Vocabulary):
+class MappingFrame(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/mapping-frame"
 
 
-class MetamorphicFacies(Vocabulary):
+class MetamorphicFacies(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/metamorphic-facies"
 
 
-class MetamorphicGrade(Vocabulary):
+class MetamorphicGrade(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/metamorphic-grade"
 
 
-class ObservationMethodGeologicFeature(Vocabulary):
+class ObservationMethodGeologicFeature(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/observation-method-geologic-feature"
 
 
-class ObservationMethodMappedFeature(Vocabulary):
+class ObservationMethodMappedFeature(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/observation-method-mapped-feature"
 
 
-class OrientationDeterminationMethod(Vocabulary):
+class OrientationDeterminationMethod(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/orientation-determination-method"
 
 
-class ParticleAspectRatio(Vocabulary):
+class ParticleAspectRatio(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/particle-aspect-ratio"
 
 
-class ParticleShape(Vocabulary):
+class ParticleShape(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/particle-shape"
 
 
-class ParticleType(Vocabulary):
+class ParticleType(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/particle-type"
 
 
-class PlanarPolarityCode(Vocabulary):
+class PlanarPolarityCode(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/planar-polarity-code"
 
 
-class ProportionTerm(Vocabulary):
+class ProportionTerm(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/proportion-term"
 
 
-class SimpleLithology(Vocabulary):
+class SimpleLithology(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/simple-lithology"
 
 
-class StratigraphicRank(Vocabulary):
+class StratigraphicRank(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/stratigraphic-rank"
 
 
-class ValueQualifier(Vocabulary):
+class ValueQualifier(RemoteVocabulary):
     class Meta:
         source = "http://resource.geosciml.org/classifier/cgi/value-qualifier"
 
 
-class VocabularyRelation(Vocabulary):
+class RemoteVocabularyRelation(RemoteVocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/vocabulary-relation"
+        source = "http://resource.geosciml.org/classifier/cgi/RemoteVocabulary-relation"

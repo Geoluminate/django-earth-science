@@ -1,28 +1,34 @@
 version: '3'
-     
+name: earth_science
+
+volumes:
+  postgres: {}
+  postgres_backups: {}
+  media: {}
+
 services:
+
   django: &django
     build:
-      dockerfile: ./docker/Dockerfile
       context: .
-    image: django_geoscience
-    container_name: django_geoscience
-    working_dir: /app
+      dockerfile: ./compose/development/django
+    image: earth_science_django
+    depends_on:
+      - postgres
     volumes:
       - ./:/app:z
+    env_file:
+      - stack.local.env
     ports:
-      - "8000:8000"
-    command: ./docker/django
-    # entrypoint: "tail -f /dev/null"
+      - 8000:8000
+      - 5678:5678
+    command: ./compose/development/start-django-local
+    entrypoint: ./compose/development/entrypoint
 
-  docs:
-    <<: *django
-    image: django_geoscience_docs
-    container_name: django_geoscience_docs
-    working_dir: /app/docs
+  postgres:
+    image: geoluminate/postgis:latest
     volumes:
-      - ./:/app:z
-    ports:
-      - "9000:9000"
-    command: ../docker/docs
-    # entrypoint: "tail -f /dev/null"
+      - postgres:/var/lib/postgresql/data
+      - postgres_backups:/backups
+    env_file:
+      - stack.local.env

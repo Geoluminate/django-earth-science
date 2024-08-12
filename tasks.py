@@ -131,3 +131,8 @@ def live_docs(c):
     Build the documentation and open it in a live browser
     """
     c.run("sphinx-autobuild -b html --host 0.0.0.0 --port 9000 --watch . -c . . _build/html")
+
+
+@task
+def create_superuser(c):
+    c.run("docker compose run django python manage.py createsuperuser --noinput")
