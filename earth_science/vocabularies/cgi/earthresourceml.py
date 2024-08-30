@@ -5,94 +5,94 @@ from research_vocabs import Vocabulary
 
 class CommodityCode(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/commodity-code"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/CommodityCode.ttl"
 
 
 class EarthResourceExpression(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/earth-resource-expression"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/EarthResourceExpression.ttl"
 
 
 class EarthResourceForm(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/earth-resource-form"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/EarthResourceForm.ttl"
 
 
 class EarthResourceMaterialRole(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/earth-resource-material-role"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/EarthResourceMaterialRole.ttl"
 
 
 class EarthResourceShape(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/earth-resource-shape"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/EarthResourceShape.ttl"
 
 
 class EndUsePotential(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/end-use-potential"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/EndUsePotential.ttl"
 
 
 class EnvironmentalImpact(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/environmental-impact"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/EnvironmentalImpact.ttl"
 
 
 class ExplorationActivityType(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/exploration-activity-type"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/ExplorationActivityType.ttl"
 
 
 class ExplorationResult(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/exploration-result"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/ExplorationResult.ttl"
 
 
 class MineStatus(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/mine-status"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/MineStatus.ttl"
 
 
 class MineralOccurrenceType(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/mineral-occurrence-type"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/MineralOccurrenceType.ttl"
 
 
 class MineralResourceReportingClassificationMethod(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/mineral-resource-reporting-classification-method"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/ClassificationMethodUsed.ttl"
 
 
 class MiningActivity(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/mining-activity"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/MiningActivity.ttl"
 
 
 class ProcessingActivity(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/processing-activity"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/ProcessingActivity.ttl"
 
 
 class RawMaterialRole(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/raw-material-role"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/RawMaterialRole.ttl"
 
 
 class ReserveAssessmentCategory(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/reserve-assessment-category"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/ReserveCategory.ttl"
 
 
 class ResourceAssessmentCategory(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/resource-assessment-category"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/ResourceCategory.ttl"
 
 
 class UNFCCode(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/unfc-code"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/UNFCValue.ttl"
 
 
 class WasteStorage(Vocabulary):
     class Meta:
-        source = "http://resource.geosciml.org/classifier/cgi/waste-storage"
+        source = "https://github.com/CGI-IUGS/cgi-vocabs/blob/master/vocabularies/earthresourceml/WasteStorage.ttl"
