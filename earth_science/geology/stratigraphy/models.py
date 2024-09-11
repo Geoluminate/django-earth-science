@@ -1,11 +1,11 @@
+from django.db import models
 from django.utils.translation import gettext as _
-from geoluminate.models import Sample
 from research_vocabs.fields import ConceptField
 
 from earth_science.vocabularies.cgi import geosciml
 
 
-class StratigraphicUnit(Sample):
+class StratigraphicUnit(models.Model):
     _defaults = {}
 
     rank = ConceptField(
