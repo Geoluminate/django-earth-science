@@ -1,9 +1,8 @@
-from .generic import GenericEarthSample, GenericSite
+from .generic import GenericEarthSample
 from .rock import DrillCore, DrillCuttings, RockPowder, RockSample, ThinSection
 
 __all__ = [
     "GenericEarthSample",
-    "GenericSite",
     "RockSample",
     "DrillCore",
     "DrillCuttings",
