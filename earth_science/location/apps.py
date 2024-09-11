@@ -7,7 +7,7 @@ class LocationConfig(AppConfig):
     label = "location"
     verbose_name = _("Location")
 
-    def ready(self) -> None:
+    def ready(self):
         from actstream import registry
 
         registry.register(self.get_model("Point"))

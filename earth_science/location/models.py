@@ -1,17 +1,17 @@
-from django.conf import settings
 from django.contrib import admin
-from django.urls import reverse
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext as _
 from geoluminate.db import models
 
-LABELS = settings.GEOLUMINATE_LABELS
-LOCATION_OPTS = settings.GEOLUMINATE_LOCATION
+from earth_science.conf import settings
+
+X_OPTS = settings.EARTH_SCIENCE_X_COORD
+Y_OPTS = settings.EARTH_SCIENCE_Y_COORD
 
 
 # 6 decimal places is accurate to within ~0.11 meters
-X_MAX_DIGITS = LOCATION_OPTS["x"].get("max_digits") or LOCATION_OPTS["x"]["decimal_places"] + 3
+X_MAX_DIGITS = X_OPTS.get("max_digits") or X_OPTS["decimal_places"] + 3
 
-Y_MAX_DIGITS = LOCATION_OPTS["y"].get("max_digits") or LOCATION_OPTS["y"]["decimal_places"] + 2
+Y_MAX_DIGITS = Y_OPTS.get("max_digits") or Y_OPTS["decimal_places"] + 2
 
 
 class Point(models.Model):
@@ -19,20 +19,20 @@ class Point(models.Model):
         verbose_name=_("x"),
         help_text=_("The x-coordinate of the location."),
         max_digits=X_MAX_DIGITS,
-        decimal_places=LOCATION_OPTS["x"]["decimal_places"],
+        decimal_places=X_OPTS["decimal_places"],
     )
     y = models.DecimalField(
         verbose_name=_("y"),
         help_text=_("The y-coordinate of the location."),
         max_digits=Y_MAX_DIGITS,
-        decimal_places=LOCATION_OPTS["y"]["decimal_places"],
+        decimal_places=Y_OPTS["decimal_places"],
     )
     crs = models.CharField(
         verbose_name=_("CRS"),
         help_text=_("The coordinate reference system."),
         max_length=255,
-        default=LOCATION_OPTS.get("crs", ""),
-        editable=not LOCATION_OPTS.get("crs", False),
+        default=settings.EARTH_SCIENCE_CRS,
+        editable=False,
     )
 
     class Meta:
@@ -68,4 +68,7 @@ class Point(models.Model):
 
     def get_absolute_url(self):
         """Returns the absolute URL for this site"""
-        return reverse("location-detail", kwargs={"lon": self.longitude, "lat": self.latitude})
+        return "/"
+        # return reverse(
+        #     "location-detail", kwargs={"lon": self.longitude, "lat": self.latitude}
+        # )
