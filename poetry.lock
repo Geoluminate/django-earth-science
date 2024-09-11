@@ -62,6 +62,20 @@ test = ["anyio[trio]", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypo
 trio = ["trio (>=0.23)"]
 
 [[package]]
+name = "anytree"
+version = "2.12.1"
+description = "Powerful and Lightweight Python Tree Data Structure with various plugins"
+optional = false
+python-versions = ">=3.7.2,<4"
+files = [
+    {file = "anytree-2.12.1-py3-none-any.whl", hash = "sha256:5ea9e61caf96db1e5b3d0a914378d2cd83c269dfce1fb8242ce96589fa3382f0"},
+    {file = "anytree-2.12.1.tar.gz", hash = "sha256:244def434ccf31b668ed282954e5d315b4e066c4940b94aff4a7962d85947830"},
+]
+
+[package.dependencies]
+six = "*"
+
+[[package]]
 name = "appdirs"
 version = "1.4.4"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
@@ -1037,19 +1051,19 @@ name = "django-account-management"
 version = "0.1.0"
 description = "Tools for managing django user accounts."
 optional = false
-python-versions = "^3.10"
+python-versions = ">=3.10,<4.0"
 files = []
 develop = false
 
 [package.dependencies]
+django-flex-menus = {git = "https://github.com/SamuelJennings/django-flex-menus"}
 django-htmx = "^1.18.0"
-django-simple-menu = "^2.1.3"
 
 [package.source]
 type = "git"
-url = "https://github.com/SamuelJennings/django-account-management.git"
-reference = "main"
-resolved_reference = "8da66d37851a427be6d77e5503d991408fceb13c"
+url = "https://github.com/SamuelJennings/django-account-management"
+reference = "HEAD"
+resolved_reference = "17e1363b34e5c5a52872f5f9a1e8822e020cd0d3"
 
 [[package]]
 name = "django-activity-stream"
@@ -1067,6 +1081,21 @@ Django = ">=3.2"
 
 [package.extras]
 drf = ["django-rest-framework", "rest-framework-generic-relations"]
+
+[[package]]
+name = "django-admin-extra-buttons"
+version = "1.5.8"
+description = "Django mixin to easily add buttons to any ModelAdmin"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django_admin_extra_buttons-1.5.8.tar.gz", hash = "sha256:48dc9d470ade3f5f29c80753af4d367c08947d02c9a5757aa7a9223eda6812c5"},
+]
+
+[package.extras]
+dev = ["autopep8", "bump2version", "check-manifest", "django", "flake8", "isort", "mypy", "pep8", "pip-tools", "readme", "sphinx", "wheel"]
+docs = ["markdown-include", "mdx_gh_links", "mkdocs", "mkdocs-material", "mkdocs-material"]
+test = ["coverage", "django_webtest", "factory-boy", "pdbpp", "pyquery", "pytest", "pytest-cov", "pytest-django", "pytest-echo", "tox (>=2.3)", "wheel"]
 
 [[package]]
 name = "django-admin-sortable2"
@@ -1151,27 +1180,6 @@ files = [
 
 [package.dependencies]
 django = "*"
-
-[[package]]
-name = "django-auto-datatables"
-version = "0.0.1"
-description = "A high-level Django app for easily creating datatables(.net) from models."
-optional = false
-python-versions = ">=3.10,<4.0"
-files = []
-develop = false
-
-[package.dependencies]
-django = "^5.0.7"
-djangorestframework-datatables = "^0.7.2"
-djangorestframework-datatables-editor = "^0.3.3"
-drf-schema-adapter = "^3.0.6"
-
-[package.source]
-type = "git"
-url = "https://github.com/SamuelJennings/django-auto-datatables.git"
-reference = "main"
-resolved_reference = "c095a2a616131298bd37b60d99368d9712a12aec"
 
 [[package]]
 name = "django-bleach"
@@ -1488,6 +1496,24 @@ files = [
 Django = ">=4.2"
 
 [[package]]
+name = "django-flex-menus"
+version = "0.1.0"
+description = "Flexible site menus for Django"
+optional = false
+python-versions = ">=3.1,<4.0"
+files = []
+develop = false
+
+[package.dependencies]
+anytree = "^2.12.1"
+
+[package.source]
+type = "git"
+url = "https://github.com/SamuelJennings/django-flex-menus"
+reference = "HEAD"
+resolved_reference = "52439593de0ed9bf5657fd6fbecc31cdc172c213"
+
+[[package]]
 name = "django-fluent-comments"
 version = "3.0"
 description = "A modern, ajax-based appearance for django_comments"
@@ -1783,6 +1809,20 @@ dev = ["django-organizations[linting,tests]", "pre-commit", "tox"]
 docs = ["furo (==2023.9.10)", "sphinx (==7.2.6)"]
 linting = ["isort", "ruff"]
 tests = ["coverage", "django-autoslug (>=1.9.8)", "django-extensions (>=2.0.8)", "mock-django (==0.6.9)", "pytest (>=6.0)", "pytest-cov (>=2.4.0)", "pytest-django (>=3.0.0)"]
+
+[[package]]
+name = "django-parler"
+version = "2.3"
+description = "Simple Django model translations without nasty hacks, featuring nice admin integration."
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-parler-2.3.tar.gz", hash = "sha256:2c8f5012ceb5e49af93b16ea3fe4d0c83d70b91b2d0f470c05d7d742b6f3083d"},
+    {file = "django_parler-2.3-py3-none-any.whl", hash = "sha256:8f6c8061e4b5690f1ee2d8e5760940ef06bf78a5bfa033d11178377559c749cf"},
+]
+
+[package.dependencies]
+Django = ">=2.2"
 
 [[package]]
 name = "django-partial-date"
@@ -2171,34 +2211,6 @@ files = [
 django = ">=4.2"
 
 [[package]]
-name = "djangorestframework-datatables"
-version = "0.7.2"
-description = "Seamless integration between Django REST framework and Datatables (https://datatables.net)"
-optional = false
-python-versions = "*"
-files = [
-    {file = "djangorestframework_datatables-0.7.2-py2.py3-none-any.whl", hash = "sha256:fd5747b1e3d0bfb84713a975394dd4d879b57ee8bc66cc0f97566fa67f4406f4"},
-    {file = "djangorestframework_datatables-0.7.2.tar.gz", hash = "sha256:d7953968088ceb14968621a0c0a83d2f39ec1cda24b5ebe1240f3c9619bc7129"},
-]
-
-[package.dependencies]
-djangorestframework = ">=3.14.0"
-
-[[package]]
-name = "djangorestframework-datatables-editor"
-version = "0.3.3"
-description = "Seamless integration between Django REST framework and Datatables (https://datatables.net) with supporting Datatables editor"
-optional = false
-python-versions = "*"
-files = [
-    {file = "djangorestframework-datatables-editor-0.3.3.tar.gz", hash = "sha256:735b66a574694fcf958a58a364fd070c18866c3ac845f96490ac648858415465"},
-    {file = "djangorestframework_datatables_editor-0.3.3-py2.py3-none-any.whl", hash = "sha256:9c688a553e4d0c78324969b695ecd7cfcb8903edd57c2d462f9eb17966daa7e0"},
-]
-
-[package.dependencies]
-djangorestframework = ">=3.9.1"
-
-[[package]]
 name = "djangorestframework-gis"
 version = "1.0"
 description = "Geographic add-ons for Django Rest Framework"
@@ -2533,12 +2545,12 @@ celery = "^5.2.7"
 crispy-bootstrap5 = "^2024.2"
 dj-rest-auth = "^3.0.0"
 django = {version = ">=3.2", extras = ["argon2"]}
-django-account-management = {git = "https://github.com/SamuelJennings/django-account-management.git", rev = "main"}
+django-account-management = {git = "https://github.com/SamuelJennings/django-account-management"}
 django-activity-stream = "^2.0.0"
+django-admin-extra-buttons = "^1.5.8"
 django-admin-tools = "^0.9.3"
 django-adminactions = "^2.0.0"
 django-allauth = {version = "^64.0.0", extras = ["mfa", "socialaccount"]}
-django-auto-datatables = {git = "https://github.com/SamuelJennings/django-auto-datatables.git", rev = "main"}
 django-bleach = "^3.0.1"
 django-celery-beat = "^2.5.0"
 django-classy-tags = "^4.1.0"
@@ -2571,6 +2583,7 @@ django-meta = "^2.1.0"
 django-migration-zero = "^2.0.0"
 django-model-utils = "^4.3.1"
 django-organizations = "^2.1.0"
+django-parler = "^2.3"
 django-partial-date = "^1.3.2"
 django-pint = "^0.7.1"
 django-redis = "^5.2.0"
@@ -2612,7 +2625,7 @@ whitenoise = "^6.4.0"
 type = "git"
 url = "https://github.com/Geoluminate/geoluminate.git"
 reference = "main"
-resolved_reference = "22ac8e24b660df6521303c98c7acad50cd4f26ec"
+resolved_reference = "c96b97a29db66ee0689a375a3b5447e5e95620d1"
 
 [[package]]
 name = "gunicorn"

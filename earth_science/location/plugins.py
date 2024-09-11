@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
+from geoluminate.core.utils import icon
 from geoluminate.plugins import PluginRegistry
-from geoluminate.utils import icon
 
 from .models import Point
 from .views import PointDetailView
