@@ -1,6 +1,6 @@
-from earth_science.common import samples
+from earth_science.models.features import SamplingLocation
 
 
-class GenericSite(samples.AbstractGenericSite):
+class GenericSite(SamplingLocation):
     class Meta:
         abstract = False

@@ -1,7 +1,5 @@
-from geoluminate.metadata import Metadata
-
-from .models import CustomSample
+# from .models import CustomSample
 
 
-class CustomSampleMeta(Metadata):
-    model = CustomSample
+# class CustomSampleMeta(Metadata):
+#     model = CustomSample

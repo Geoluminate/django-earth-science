@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.urls import reverse
 from django.utils.translation import gettext as _
 from geoluminate.db import models
 
@@ -68,7 +69,4 @@ class Point(models.Model):
 
     def get_absolute_url(self):
         """Returns the absolute URL for this site"""
-        return "/"
-        # return reverse(
-        #     "location-detail", kwargs={"lon": self.longitude, "lat": self.latitude}
-        # )
+        return reverse("point-detail", kwargs={"lon": self.longitude, "lat": self.latitude})

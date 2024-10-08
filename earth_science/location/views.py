@@ -6,10 +6,16 @@ from .models import Point
 
 
 class PointDetailView(BaseDetailView):
-    base_template = "location/location_detail.html"
+    base_template = "locations/location_detail.html"
     model = Point
     title = _("Point")
     form_class = PointForm
+    extra_context = {
+        "menu": "LocationDetailMenu",
+    }
+
+    def get_object(self, queryset=None):
+        return Point.objects.get(x=self.kwargs["lon"], y=self.kwargs["lat"])
 
 
 class PointEditView(BaseEditView):

@@ -1,16 +1,25 @@
-from django.views.generic import TemplateView
-from geoluminate.core.utils import icon
+from django.utils.translation import gettext_lazy as _
+from django.views.generic import UpdateView
+from flex_menu import Menu
 from geoluminate.plugins import PluginRegistry
 
 from .models import Point
 from .views import PointDetailView
 
-location = PluginRegistry(base=PointDetailView)
+LocationDetailMenu = Menu(
+    "LocationDetailMenu",
+    label=_("Location"),
+    root_template="geoluminate/menus/detail/root.html",
+)
+
+
+location = PluginRegistry(base=PointDetailView, menu=LocationDetailMenu)
 
 
 # LOCATION PLUGINS
-@location.page("overview", icon=icon("overview"))
-class PointOverview(PointDetailView, TemplateView):
+@location.page("overview", icon="overview")
+class PointOverview(UpdateView):
     model = Point
-    base_template = "location/location_detail.html"
-    template_name = "geoluminate/plugins/map.html"
+    template_name = "geoluminate/plugins/overview.html"
+    # base_template = "location/location_detail.html"
+    # template_name = "geoluminate/plugins/map.html"
