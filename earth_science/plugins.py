@@ -1,11 +1,12 @@
 from django.utils.translation import gettext as _
+from django.views.generic import TemplateView
 from geoluminate.plugins import contributor, dataset, project, sample
 
 
-class Map:
+class Map(TemplateView):
     name = _("Explorer")
     icon = "map.svg"
-    template_name = "core/plugins/map.html"
+    template_name = "earth_science/plugins/map.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -13,14 +14,14 @@ class Map:
         return context
 
     def serialize_dataset_samples(self, dataset):
-        return None
+        return {}
 
 
 @project.page()
 class ProjectMap(Map):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        for dataset in self.get_object().datasets.all():
+        for dataset in self.base_object.datasets.all():
             context["map_source_list"].update(self.serialize_dataset_samples(dataset))
         return context
 
@@ -29,7 +30,7 @@ class ProjectMap(Map):
 class DatasetMap(Map):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["map_source_list"].update(self.serialize_dataset_samples(self.get_object()))
+        context["map_source_list"].update(self.serialize_dataset_samples(self.base_object))
 
         return context
 
@@ -38,7 +39,7 @@ class DatasetMap(Map):
 class ContributorSampleMap(Map):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        for dataset in self.get_object().datasets.all():
+        for dataset in self.base_object.datasets.all():
             context["map_source_list"].update(self.serialize_dataset_samples(dataset))
         return context
 
