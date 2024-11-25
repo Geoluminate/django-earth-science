@@ -1019,6 +1019,17 @@ files = [
 ]
 
 [[package]]
+name = "defusedxml"
+version = "0.7.1"
+description = "XML bomb protection for Python stdlib modules"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"},
+    {file = "defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"},
+]
+
+[[package]]
 name = "deptry"
 version = "0.8.0"
 description = "A command line utility to check for obsolete, missing and transitive dependencies in a Python project."
@@ -1094,18 +1105,18 @@ with-social = ["django-allauth (>=0.40.0,<0.53.0)"]
 
 [[package]]
 name = "django"
-version = "5.0.9"
+version = "5.1.3"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "Django-5.0.9-py3-none-any.whl", hash = "sha256:f219576ba53be4e83f485130a7283f0efde06a9f2e3a7c3c5180327549f078fa"},
-    {file = "Django-5.0.9.tar.gz", hash = "sha256:6333870d342329b60174da3a60dbd302e533f3b0bb0971516750e974a99b5a39"},
+    {file = "Django-5.1.3-py3-none-any.whl", hash = "sha256:8b38a9a12da3ae00cb0ba72da985ec4b14de6345046b1e174b1fd7254398f818"},
+    {file = "Django-5.1.3.tar.gz", hash = "sha256:c0fa0e619c39325a169208caef234f90baa925227032ad3f44842ba14d75234a"},
 ]
 
 [package.dependencies]
 argon2-cffi = {version = ">=19.1.0", optional = true, markers = "extra == \"argon2\""}
-asgiref = ">=3.7.0,<4"
+asgiref = ">=3.8.1,<4"
 sqlparse = ">=0.3.1"
 tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 
@@ -1334,22 +1345,26 @@ Django = ">=2.2"
 
 [[package]]
 name = "django-comments-xtd"
-version = "2.10.0"
-description = "Django Comments Framework extension app with thread support, follow up notifications and email confirmations."
+version = "2.10.1"
+description = ""
 optional = false
 python-versions = "*"
-files = [
-    {file = "django_comments_xtd-2.10.0-py3-none-any.whl", hash = "sha256:d9e670931a427028a7b8f4f2e6a737b014bf83d713368bd6ff4823bc2caca04e"},
-    {file = "django_comments_xtd-2.10.0.tar.gz", hash = "sha256:6217c41ed398942c07a44374a308cd9bf541f5444d3d25b3eaae0447c4a66d48"},
-]
+files = []
+develop = false
 
 [package.dependencies]
-Django = ">=3,<5.1"
+Django = ">=3,<5.2"
 django-contrib-comments = ">=2.2,<2.3"
 djangorestframework = ">=3.12,<3.16"
 docutils = "*"
 pytz = "*"
 six = "*"
+
+[package.source]
+type = "git"
+url = "https://github.com/danirus/django-comments-xtd"
+reference = "HEAD"
+resolved_reference = "67b86b8342403617a0e1200a4b6213193ed533f7"
 
 [[package]]
 name = "django-compressor"
@@ -1552,20 +1567,6 @@ type = "git"
 url = "https://github.com/SamuelJennings/django-easy-icons"
 reference = "HEAD"
 resolved_reference = "13094788f188dec7d87174063b1d7791cce544c2"
-
-[[package]]
-name = "django-el-pagination"
-version = "4.0.0"
-description = "Django pagination tools supporting Ajax, multiple and lazy pagination, Twitter-style and Digg-style pagination."
-optional = false
-python-versions = "*"
-files = [
-    {file = "django-el-pagination-4.0.0.tar.gz", hash = "sha256:eb9a5be4cd46d1b43c1a5f3732fc428a3eb168b72ce122b7506e3da615187384"},
-    {file = "django_el_pagination-4.0.0-py2.py3-none-any.whl", hash = "sha256:61d76242a29de5705f01f0ffa6df9af436b978839ea39fd411269a30a410dfc0"},
-]
-
-[package.dependencies]
-django = ">=3.2.0"
 
 [[package]]
 name = "django-entangled"
@@ -1990,6 +1991,22 @@ files = [
 Django = ">=2.2"
 
 [[package]]
+name = "django-parler-rest"
+version = "2.2"
+description = "Multilingual support for django-rest-framework"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-parler-rest-2.2.tar.gz", hash = "sha256:58d0d7155964214dfbdb72783eff6a200c5e786e2d4f3cd74ea463d56cb10e9c"},
+    {file = "django_parler_rest-2.2-py2.py3-none-any.whl", hash = "sha256:3cba9a47ec64771394e99ca49f9bef6f7dd76c1e39634fd634d2c1050fb9630a"},
+]
+
+[package.dependencies]
+django = ">=2.2"
+django-parler = ">=1.9.2"
+djangorestframework = ">=3.5"
+
+[[package]]
 name = "django-partial-date"
 version = "1.3.2"
 description = "Django custom model field for partial dates with the form YYYY, YYYY-MM, YYYY-MM-DD"
@@ -2164,20 +2181,6 @@ type = "git"
 url = "https://github.com/SamuelJennings/django-setup-tools"
 reference = "HEAD"
 resolved_reference = "c6b5e92130304997c548507221b7ad0727656ed7"
-
-[[package]]
-name = "django-simple-menu"
-version = "2.1.3"
-description = "Simple, yet powerful, code-based menus for Django applications"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "django-simple-menu-2.1.3.tar.gz", hash = "sha256:4246c12fa267598e4652793dfec5d123f97f82430965bd34a8c42d38d5be1801"},
-    {file = "django_simple_menu-2.1.3-py3-none-any.whl", hash = "sha256:371ed124cc35c72496c2b99672fac759d268950454984c7f15f2cbdedb4f2840"},
-]
-
-[package.dependencies]
-Django = ">=3.2"
 
 [[package]]
 name = "django-social-share"
@@ -2389,6 +2392,17 @@ files = [
 ]
 
 [[package]]
+name = "django-widget-tweaks"
+version = "1.5.0"
+description = "Tweak the form field rendering in templates, not in python-level form definitions."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django-widget-tweaks-1.5.0.tar.gz", hash = "sha256:1c2180681ebb994e922c754804c7ffebbe1245014777ac47897a81f57cc629c7"},
+    {file = "django_widget_tweaks-1.5.0-py3-none-any.whl", hash = "sha256:a41b7b2f05bd44d673d11ebd6c09a96f1d013ee98121cb98c384fe84e33b881e"},
+]
+
+[[package]]
 name = "djangorestframework"
 version = "3.15.2"
 description = "Web APIs for Django, made easy."
@@ -2588,6 +2602,17 @@ optional = false
 python-versions = "*"
 files = [
     {file = "EditorConfig-0.12.4.tar.gz", hash = "sha256:24857fa1793917dd9ccf0c7810a07e05404ce9b823521c7dce22a4fb5d125f80"},
+]
+
+[[package]]
+name = "et-xmlfile"
+version = "2.0.0"
+description = "An implementation of lxml.xmlfile for the standard library"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "et_xmlfile-2.0.0-py3-none-any.whl", hash = "sha256:7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa"},
+    {file = "et_xmlfile-2.0.0.tar.gz", hash = "sha256:dab3f4764309081ce75662649be815c4c9081e88f0837825f90fd28317d4da54"},
 ]
 
 [[package]]
@@ -2819,7 +2844,7 @@ develop = false
 celery = "^5.4.0"
 crispy-bootstrap5 = "^2024.2"
 dj-rest-auth = "^3.0.0"
-django = {version = "^5", extras = ["argon2"]}
+django = {version = "^5.1.3", extras = ["argon2"]}
 django-account-management = {git = "https://github.com/SamuelJennings/django-account-management"}
 django-activity-stream = "^2.0.0"
 django-admin-extra-buttons = "^1.5.8"
@@ -2831,7 +2856,7 @@ django-celery-beat = "^2.5.0"
 django-classy-tags = "^4.1.0"
 django-cleanup = "^8.1.0"
 django-client-side-image-cropping = "^0.1.10"
-django-comments-xtd = "^2.10.0"
+django-comments-xtd = {git = "https://github.com/danirus/django-comments-xtd"}
 django-compressor = "^4.5.1"
 django-contact-form = "^2.1"
 django-content-license = {git = "https://github.com/Geoluminate/django-content-license"}
@@ -2841,7 +2866,6 @@ django-crispy-forms = "^2.3"
 django-dbbackup = "^4.0.2"
 django-downloadview = "^2.3.0"
 django-easy-icons = {git = "https://github.com/SamuelJennings/django-easy-icons"}
-django-el-pagination = "^4.0.0"
 django-entangled = "^0.5.4"
 django-environ = "^0.10.0"
 django-filter = "^24.3"
@@ -2862,7 +2886,7 @@ django-migration-zero = "^2.0.0"
 django-model-utils = "^4.3.1"
 django-organizations = "^2.1.0"
 django-parler = "^2.3"
-django-partial-date = "^1.3.2"
+django-parler-rest = "^2.2"
 django-pint = "^0.7.3"
 django-polymorphic-treebeard = {git = "https://github.com/SamuelJennings/django-polymorphic-treebeard"}
 django-redis = "^5.2.0"
@@ -2871,7 +2895,6 @@ django-rest-polymorphic = "^0.1.10"
 django-sekizai = "^4.1.0"
 django-select2 = "^8.1.1"
 django-setup-tools = {git = "https://github.com/SamuelJennings/django-setup-tools"}
-django-simple-menu = "^2.1.1"
 django-social-share = "^2.3.0"
 django-solo = "^2.2.0"
 django-split-settings = "^1.2.0"
@@ -2880,6 +2903,7 @@ django-tables2 = "^2.7.0"
 django-template-partials = "^24.2"
 django-treebeard = "^4.7.1"
 django-webpack-loader = "^3.0.1"
+django-widget-tweaks = "^1.5.0"
 djangorestframework = "^3.14.0"
 djangorestframework-gis = "^1.0"
 drf-access-policy = "^1.5.0"
@@ -2894,11 +2918,13 @@ faker = "^24.1.0"
 flower = "^1.2.0"
 gunicorn = "^20.1.0"
 lxml = "^5.1.0"
-neapolitan = "^24.4"
+neapolitan = "24.7"
 psycopg2-binary = "^2.9.5"
 pyyaml = "^6.0"
 redis = "^4.5.2"
+rest-pandas = "^1.1.0"
 shortuuid = "^1.0.13"
+tablib = {version = "^3.7.0", extras = ["all"]}
 tldextract = "^3.4.0"
 whitenoise = "^6.4.0"
 
@@ -2906,7 +2932,7 @@ whitenoise = "^6.4.0"
 type = "git"
 url = "https://github.com/Geoluminate/geoluminate"
 reference = "HEAD"
-resolved_reference = "ba2fbfa1f6adcdfa286bb0a92c5cf64a2f28629c"
+resolved_reference = "31533363a7447e1108c6d5a49b9a19f7d95ca803"
 
 [[package]]
 name = "geoluminate-docs"
@@ -3904,13 +3930,13 @@ testing-docutils = ["pygments", "pytest (>=7,<8)", "pytest-param-files (>=0.3.4,
 
 [[package]]
 name = "neapolitan"
-version = "24.6"
+version = "24.7"
 description = "Neapolitan: quick CRUD views for Django."
 optional = false
 python-versions = "*"
 files = [
-    {file = "neapolitan-24.6-py2.py3-none-any.whl", hash = "sha256:2315b23fdfac09c380fd3e3899af237b77db702f60e6779e66dd9f133bce571b"},
-    {file = "neapolitan-24.6.tar.gz", hash = "sha256:0c84963a4b5cab2411952ee5bd939adbb8987ef27b3a53ca1399ab607b691cab"},
+    {file = "neapolitan-24.7-py2.py3-none-any.whl", hash = "sha256:2b3bf2490dce77819c0c46f2e4841820e1f68df9e745a84837b818395f3b7fdb"},
+    {file = "neapolitan-24.7.tar.gz", hash = "sha256:4081f1b4fa7e7f9142688ab7efde3b24af3fb262d72f2fb96af834d8481851bf"},
 ]
 
 [package.dependencies]
@@ -4011,6 +4037,33 @@ signals = ["blinker (>=1.4.0)"]
 signedtoken = ["cryptography (>=3.0.0)", "pyjwt (>=2.0.0,<3)"]
 
 [[package]]
+name = "odfpy"
+version = "1.4.1"
+description = "Python API and tools to manipulate OpenDocument files"
+optional = false
+python-versions = "*"
+files = [
+    {file = "odfpy-1.4.1.tar.gz", hash = "sha256:db766a6e59c5103212f3cc92ec8dd50a0f3a02790233ed0b52148b70d3c438ec"},
+]
+
+[package.dependencies]
+defusedxml = "*"
+
+[[package]]
+name = "openpyxl"
+version = "3.1.5"
+description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "openpyxl-3.1.5-py2.py3-none-any.whl", hash = "sha256:5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2"},
+    {file = "openpyxl-3.1.5.tar.gz", hash = "sha256:cf0e3cf56142039133628b5acffe8ef0c12bc902d2aadd3e0fe5878dc08d1050"},
+]
+
+[package.dependencies]
+et-xmlfile = "*"
+
+[[package]]
 name = "orjson"
 version = "3.10.10"
 description = "Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy"
@@ -4087,6 +4140,92 @@ files = [
     {file = "packaging-24.1-py3-none-any.whl", hash = "sha256:5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124"},
     {file = "packaging-24.1.tar.gz", hash = "sha256:026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"},
 ]
+
+[[package]]
+name = "pandas"
+version = "2.2.3"
+description = "Powerful data structures for data analysis, time series, and statistics"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "pandas-2.2.3-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:1948ddde24197a0f7add2bdc4ca83bf2b1ef84a1bc8ccffd95eda17fd836ecb5"},
+    {file = "pandas-2.2.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:381175499d3802cde0eabbaf6324cce0c4f5d52ca6f8c377c29ad442f50f6348"},
+    {file = "pandas-2.2.3-cp310-cp310-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:d9c45366def9a3dd85a6454c0e7908f2b3b8e9c138f5dc38fed7ce720d8453ed"},
+    {file = "pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:86976a1c5b25ae3f8ccae3a5306e443569ee3c3faf444dfd0f41cda24667ad57"},
+    {file = "pandas-2.2.3-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:b8661b0238a69d7aafe156b7fa86c44b881387509653fdf857bebc5e4008ad42"},
+    {file = "pandas-2.2.3-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:37e0aced3e8f539eccf2e099f65cdb9c8aa85109b0be6e93e2baff94264bdc6f"},
+    {file = "pandas-2.2.3-cp310-cp310-win_amd64.whl", hash = "sha256:56534ce0746a58afaf7942ba4863e0ef81c9c50d3f0ae93e9497d6a41a057645"},
+    {file = "pandas-2.2.3-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:66108071e1b935240e74525006034333f98bcdb87ea116de573a6a0dccb6c039"},
+    {file = "pandas-2.2.3-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:7c2875855b0ff77b2a64a0365e24455d9990730d6431b9e0ee18ad8acee13dbd"},
+    {file = "pandas-2.2.3-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:cd8d0c3be0515c12fed0bdbae072551c8b54b7192c7b1fda0ba56059a0179698"},
+    {file = "pandas-2.2.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c124333816c3a9b03fbeef3a9f230ba9a737e9e5bb4060aa2107a86cc0a497fc"},
+    {file = "pandas-2.2.3-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:63cc132e40a2e084cf01adf0775b15ac515ba905d7dcca47e9a251819c575ef3"},
+    {file = "pandas-2.2.3-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:29401dbfa9ad77319367d36940cd8a0b3a11aba16063e39632d98b0e931ddf32"},
+    {file = "pandas-2.2.3-cp311-cp311-win_amd64.whl", hash = "sha256:3fc6873a41186404dad67245896a6e440baacc92f5b716ccd1bc9ed2995ab2c5"},
+    {file = "pandas-2.2.3-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:b1d432e8d08679a40e2a6d8b2f9770a5c21793a6f9f47fdd52c5ce1948a5a8a9"},
+    {file = "pandas-2.2.3-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:a5a1595fe639f5988ba6a8e5bc9649af3baf26df3998a0abe56c02609392e0a4"},
+    {file = "pandas-2.2.3-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:5de54125a92bb4d1c051c0659e6fcb75256bf799a732a87184e5ea503965bce3"},
+    {file = "pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fffb8ae78d8af97f849404f21411c95062db1496aeb3e56f146f0355c9989319"},
+    {file = "pandas-2.2.3-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:6dfcb5ee8d4d50c06a51c2fffa6cff6272098ad6540aed1a76d15fb9318194d8"},
+    {file = "pandas-2.2.3-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:062309c1b9ea12a50e8ce661145c6aab431b1e99530d3cd60640e255778bd43a"},
+    {file = "pandas-2.2.3-cp312-cp312-win_amd64.whl", hash = "sha256:59ef3764d0fe818125a5097d2ae867ca3fa64df032331b7e0917cf5d7bf66b13"},
+    {file = "pandas-2.2.3-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:f00d1345d84d8c86a63e476bb4955e46458b304b9575dcf71102b5c705320015"},
+    {file = "pandas-2.2.3-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:3508d914817e153ad359d7e069d752cdd736a247c322d932eb89e6bc84217f28"},
+    {file = "pandas-2.2.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:22a9d949bfc9a502d320aa04e5d02feab689d61da4e7764b62c30b991c42c5f0"},
+    {file = "pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f3a255b2c19987fbbe62a9dfd6cff7ff2aa9ccab3fc75218fd4b7530f01efa24"},
+    {file = "pandas-2.2.3-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:800250ecdadb6d9c78eae4990da62743b857b470883fa27f652db8bdde7f6659"},
+    {file = "pandas-2.2.3-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:6374c452ff3ec675a8f46fd9ab25c4ad0ba590b71cf0656f8b6daa5202bca3fb"},
+    {file = "pandas-2.2.3-cp313-cp313-win_amd64.whl", hash = "sha256:61c5ad4043f791b61dd4752191d9f07f0ae412515d59ba8f005832a532f8736d"},
+    {file = "pandas-2.2.3-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:3b71f27954685ee685317063bf13c7709a7ba74fc996b84fc6821c59b0f06468"},
+    {file = "pandas-2.2.3-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:38cf8125c40dae9d5acc10fa66af8ea6fdf760b2714ee482ca691fc66e6fcb18"},
+    {file = "pandas-2.2.3-cp313-cp313t-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:ba96630bc17c875161df3818780af30e43be9b166ce51c9a18c1feae342906c2"},
+    {file = "pandas-2.2.3-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1db71525a1538b30142094edb9adc10be3f3e176748cd7acc2240c2f2e5aa3a4"},
+    {file = "pandas-2.2.3-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:15c0e1e02e93116177d29ff83e8b1619c93ddc9c49083f237d4312337a61165d"},
+    {file = "pandas-2.2.3-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:ad5b65698ab28ed8d7f18790a0dc58005c7629f227be9ecc1072aa74c0c1d43a"},
+    {file = "pandas-2.2.3-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:bc6b93f9b966093cb0fd62ff1a7e4c09e6d546ad7c1de191767baffc57628f39"},
+    {file = "pandas-2.2.3-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:5dbca4c1acd72e8eeef4753eeca07de9b1db4f398669d5994086f788a5d7cc30"},
+    {file = "pandas-2.2.3-cp39-cp39-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:8cd6d7cc958a3910f934ea8dbdf17b2364827bb4dafc38ce6eef6bb3d65ff09c"},
+    {file = "pandas-2.2.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:99df71520d25fade9db7c1076ac94eb994f4d2673ef2aa2e86ee039b6746d20c"},
+    {file = "pandas-2.2.3-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:31d0ced62d4ea3e231a9f228366919a5ea0b07440d9d4dac345376fd8e1477ea"},
+    {file = "pandas-2.2.3-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:7eee9e7cea6adf3e3d24e304ac6b8300646e2a5d1cd3a3c2abed9101b0846761"},
+    {file = "pandas-2.2.3-cp39-cp39-win_amd64.whl", hash = "sha256:4850ba03528b6dd51d6c5d273c46f183f39a9baf3f0143e566b89450965b105e"},
+    {file = "pandas-2.2.3.tar.gz", hash = "sha256:4f18ba62b61d7e192368b84517265a99b4d7ee8912f8708660fb4a366cc82667"},
+]
+
+[package.dependencies]
+numpy = [
+    {version = ">=1.22.4", markers = "python_version < \"3.11\""},
+    {version = ">=1.23.2", markers = "python_version == \"3.11\""},
+    {version = ">=1.26.0", markers = "python_version >= \"3.12\""},
+]
+python-dateutil = ">=2.8.2"
+pytz = ">=2020.1"
+tzdata = ">=2022.7"
+
+[package.extras]
+all = ["PyQt5 (>=5.15.9)", "SQLAlchemy (>=2.0.0)", "adbc-driver-postgresql (>=0.8.0)", "adbc-driver-sqlite (>=0.8.0)", "beautifulsoup4 (>=4.11.2)", "bottleneck (>=1.3.6)", "dataframe-api-compat (>=0.1.7)", "fastparquet (>=2022.12.0)", "fsspec (>=2022.11.0)", "gcsfs (>=2022.11.0)", "html5lib (>=1.1)", "hypothesis (>=6.46.1)", "jinja2 (>=3.1.2)", "lxml (>=4.9.2)", "matplotlib (>=3.6.3)", "numba (>=0.56.4)", "numexpr (>=2.8.4)", "odfpy (>=1.4.1)", "openpyxl (>=3.1.0)", "pandas-gbq (>=0.19.0)", "psycopg2 (>=2.9.6)", "pyarrow (>=10.0.1)", "pymysql (>=1.0.2)", "pyreadstat (>=1.2.0)", "pytest (>=7.3.2)", "pytest-xdist (>=2.2.0)", "python-calamine (>=0.1.7)", "pyxlsb (>=1.0.10)", "qtpy (>=2.3.0)", "s3fs (>=2022.11.0)", "scipy (>=1.10.0)", "tables (>=3.8.0)", "tabulate (>=0.9.0)", "xarray (>=2022.12.0)", "xlrd (>=2.0.1)", "xlsxwriter (>=3.0.5)", "zstandard (>=0.19.0)"]
+aws = ["s3fs (>=2022.11.0)"]
+clipboard = ["PyQt5 (>=5.15.9)", "qtpy (>=2.3.0)"]
+compression = ["zstandard (>=0.19.0)"]
+computation = ["scipy (>=1.10.0)", "xarray (>=2022.12.0)"]
+consortium-standard = ["dataframe-api-compat (>=0.1.7)"]
+excel = ["odfpy (>=1.4.1)", "openpyxl (>=3.1.0)", "python-calamine (>=0.1.7)", "pyxlsb (>=1.0.10)", "xlrd (>=2.0.1)", "xlsxwriter (>=3.0.5)"]
+feather = ["pyarrow (>=10.0.1)"]
+fss = ["fsspec (>=2022.11.0)"]
+gcp = ["gcsfs (>=2022.11.0)", "pandas-gbq (>=0.19.0)"]
+hdf5 = ["tables (>=3.8.0)"]
+html = ["beautifulsoup4 (>=4.11.2)", "html5lib (>=1.1)", "lxml (>=4.9.2)"]
+mysql = ["SQLAlchemy (>=2.0.0)", "pymysql (>=1.0.2)"]
+output-formatting = ["jinja2 (>=3.1.2)", "tabulate (>=0.9.0)"]
+parquet = ["pyarrow (>=10.0.1)"]
+performance = ["bottleneck (>=1.3.6)", "numba (>=0.56.4)", "numexpr (>=2.8.4)"]
+plot = ["matplotlib (>=3.6.3)"]
+postgresql = ["SQLAlchemy (>=2.0.0)", "adbc-driver-postgresql (>=0.8.0)", "psycopg2 (>=2.9.6)"]
+pyarrow = ["pyarrow (>=10.0.1)"]
+spss = ["pyreadstat (>=1.2.0)"]
+sql-other = ["SQLAlchemy (>=2.0.0)", "adbc-driver-postgresql (>=0.8.0)", "adbc-driver-sqlite (>=0.8.0)"]
+test = ["hypothesis (>=6.46.1)", "pytest (>=7.3.2)", "pytest-xdist (>=2.2.0)"]
+xml = ["lxml (>=4.9.2)"]
 
 [[package]]
 name = "parso"
@@ -5142,6 +5281,21 @@ requests = ">=2.0.0"
 rsa = ["oauthlib[signedtoken] (>=3.0.0)"]
 
 [[package]]
+name = "rest-pandas"
+version = "1.1.0"
+description = "Serves up pandas dataframes via the Django REST Framework for client-side(i.e. d3.js) visualizations"
+optional = false
+python-versions = "*"
+files = [
+    {file = "rest-pandas-1.1.0.tar.gz", hash = "sha256:13796398565a08c668e0fd31861939df6d0f9cc859b1493308f7cc5c11ea247c"},
+    {file = "rest_pandas-1.1.0-py3-none-any.whl", hash = "sha256:28238165223042d1618490b689fef04740dbdb63adb1ced58e4fbb8af87f63f6"},
+]
+
+[package.dependencies]
+djangorestframework = ">=3.3.1"
+pandas = ">=0.19.0"
+
+[[package]]
 name = "rjsmin"
 version = "1.2.2"
 description = "Javascript Minifier"
@@ -5697,6 +5851,15 @@ files = [
     {file = "tablib-3.7.0.tar.gz", hash = "sha256:f9db84ed398df5109bd69c11d46613d16cc572fb9ad3213f10d95e2b5f12c18e"},
 ]
 
+[package.dependencies]
+odfpy = {version = "*", optional = true, markers = "extra == \"all\""}
+openpyxl = {version = ">=2.6.0", optional = true, markers = "extra == \"all\""}
+pandas = {version = "*", optional = true, markers = "extra == \"all\""}
+pyyaml = {version = "*", optional = true, markers = "extra == \"all\""}
+tabulate = {version = "*", optional = true, markers = "extra == \"all\""}
+xlrd = {version = "*", optional = true, markers = "extra == \"all\""}
+xlwt = {version = "*", optional = true, markers = "extra == \"all\""}
+
 [package.extras]
 all = ["odfpy", "openpyxl (>=2.6.0)", "pandas", "pyyaml", "tabulate", "xlrd", "xlwt"]
 cli = ["tabulate"]
@@ -5705,6 +5868,20 @@ pandas = ["pandas"]
 xls = ["xlrd", "xlwt"]
 xlsx = ["openpyxl (>=2.6.0)"]
 yaml = ["pyyaml"]
+
+[[package]]
+name = "tabulate"
+version = "0.9.0"
+description = "Pretty-print tabular data"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tabulate-0.9.0-py3-none-any.whl", hash = "sha256:024ca478df22e9340661486f85298cff5f6dcdba14f3813e8830015b9ed1948f"},
+    {file = "tabulate-0.9.0.tar.gz", hash = "sha256:0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"},
+]
+
+[package.extras]
+widechars = ["wcwidth"]
 
 [[package]]
 name = "termcolor"

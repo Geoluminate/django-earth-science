@@ -1,11 +1,14 @@
 from django.utils.translation import gettext as _
-from geoluminate.metadata import Authority
+from geoluminate.metadata import Authority, Citation
 
 default_metadata = {
     "authority": Authority(
         name=_("Geoluminate Earth Science"),
-        website="https://ihfc-iugg.org",
+        website="https://github.com/Geoluminate/geoluminate-earth-science",
     ),
-    "keywords": [],
+    "citation": Citation(text="Geoluminate Earth Science", doi=""),
+    "keywords": [
+        "earth_science",
+    ],
     "repo_url": "https://github.com/Geoluminate/geoluminate-earth-science",
 }
