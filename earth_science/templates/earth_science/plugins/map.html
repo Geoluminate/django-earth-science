@@ -1,5 +1,7 @@
-{% load i18n static sekizai_tags %}
-<style>
+{% load i18n static sekizai_tags partials %}
+{% block content %}
+  {% partialdef plugin %}
+  <style>
     #shadow {
       box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
       width: 100%;
@@ -8,31 +10,24 @@
       z-index: 1;
       pointer-events: none;
     }
-</style>
-<script src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script>
-<link href="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.css"
-      rel="stylesheet" />
-{% comment %} <c-plugin layout="app"> {% endcomment %}
-<div id="maplibre" class="w-100 h-100">
-  <div id="shadow"></div>
-</div>
-{% comment %} </c-plugin> {% endcomment %}
-<script>
-
-$(function() {
-
-
-
-
-  // Initialize the map
-  const map = new maplibregl.Map({
-    container: 'maplibre', // ID of the element where the map will be displayed
-    style: 'https://demotiles.maplibre.org/style.json', // Style URL
-    center: [0, 0], // Initial map center in [lng, lat]
-    zoom: 2 // Initial zoom level
-  });
-
-  // Add zoom and rotation controls to the map
-  {% comment %} map.addControl(new maplibregl.NavigationControl()); {% endcomment %}
-});
-</script>
+  </style>
+  <script src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"
+          onload='loadMap()'></script>
+  <link href="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.css"
+        rel="stylesheet" />
+  <div id="maplibre" class="w-100 h-100">
+    <div id="shadow"></div>
+  </div>
+  <script>
+    function loadMap() {
+    // Initialize the map
+    const map = new maplibregl.Map({
+      container: 'maplibre', // ID of the element where the map will be displayed
+      style: 'https://demotiles.maplibre.org/style.json', // Style URL
+      center: [0, 0], // Initial map center in [lng, lat]
+      zoom: 2 // Initial zoom level
+    });
+  }
+  </script>
+{% endpartialdef plugin %}
+{% endblock content %}

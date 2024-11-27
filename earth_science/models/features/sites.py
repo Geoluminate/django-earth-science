@@ -78,15 +78,7 @@ class SamplingLocation(Sample):
 
 
 class Borehole(GeoDepthInterval, GenericHole, SamplingLocation):
-    MAX_DEPTH = 12262  # meters
-
-    def save(self, *args, **kwargs):
-        # can't query depth directly because it is a calculated property and is not set until after save
-        # if abs(self.bottom - self.top) > self.MAX_DEPTH:
-        #     raise ValueError(
-        #         _(f"The depth of the borehole exceeds the maximum allowed depth of {self.MAX_DEPTH} meters.")
-        #     )
-        super().save(*args, **kwargs)
+    HOLE_MAX_LENGTH = 12262  # meters
 
     class Meta:
         abstract = True

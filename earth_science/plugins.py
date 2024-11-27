@@ -4,8 +4,8 @@ from geoluminate import plugins
 
 
 class Map(TemplateView):
-    name = _("Explorer")
-    icon = "map.svg"
+    name = _("Map")
+    icon = "map"
     template_name = "earth_science/plugins/map.html"
 
     def get_context_data(self, **kwargs):
@@ -31,4 +31,11 @@ class DatasetMap(Map):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["map_source_list"].update(self.serialize_dataset_samples(self.base_object))
+        return context
+
+
+@plugins.register(["sample"])
+class SampleMap(Map):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         return context

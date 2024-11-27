@@ -16,6 +16,8 @@ class GenericHole(GenericEarthSample):
     samples. Use this abstract model in order to record information about how certain samples were collected.
     E.g. samples from a borehole."""
 
+    HOLE_MAX_LENGTH = None
+
     azimuth = models.QuantityField(
         base_units="deg",
         verbose_name=_("azimuth"),
@@ -45,3 +47,9 @@ class GenericHole(GenericEarthSample):
         abstract = True
         verbose_name = _("hole")
         verbose_name_plural = _("holes")
+
+    def save(self, *args, **kwargs):
+        if self.length:
+            if self.HOLE_MAX_LENGTH and self.length.magnitude > self.HOLE_MAX_LENGTH:
+                raise ValueError(f"Length of hole ({self.length}) exceeds maximum length ({self.HOLE_MAX_LENGTH} m).")
+        super().save(*args, **kwargs)
